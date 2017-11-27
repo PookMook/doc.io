@@ -21,9 +21,15 @@ export default class documentation extends Component {
         return (
           <div>
             <input value={this.state.filter} onChange={this.handleFilter}/>
-            <pre>
-              YOLO - {JSON.stringify(store.getState(), null, 1)}
-            </pre>
+
+            {store.getState().documentation.filteredList.map((item) => (
+              [ <h1 key={'categoryHeader' + item.id}>{item.title + '(' + item.subList.length + ')'}</h1>,
+                <ul key={'category' + item.id}>
+                  {item.subList.map((subItem) => (
+                    <li key={'category' + item.id + '-' + subItem.id}>{subItem.title}</li>
+                  ))}
+                </ul>]
+            ))}
           </div>
         );
     }
