@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () =>
     <div>
-        Hey! Thanks for using this example. If you like it, consider starring the repo :))
+        Developped by Arthur Juchereau <a href="https://github.com/PookMook/doc.io" target="_blank">Doc.io</a>
     </div>;
 
 

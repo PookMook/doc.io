@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { footer } from '../styles/footer.scss';
 import Routes from '../routes';
+import { app } from '../styles/app.scss';
 
 const App = () =>
-    <div>
-        <h1>Filter table</h1>
+    <div className={app}>
+        <h1>Documentation</h1>
         { Routes }
         <footer className={footer}>
-            <Link to="/">Filterable Table</Link>
+            <Link to="/">Documentation</Link>
             <Link to="/about">About</Link>
         </footer>
     </div>;

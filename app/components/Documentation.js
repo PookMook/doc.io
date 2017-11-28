@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { configureStore } from '../store/configureStore';
 import * as action from '../actions/types';
+import { doc } from '../styles/doc.scss';
 
 const store = configureStore();
 
@@ -19,11 +20,11 @@ export default class documentation extends Component {
 
     render() {
         return (
-          <div>
+          <div className={doc}>
             <input value={this.state.filter} onChange={this.handleFilter}/>
 
             {store.getState().documentation.filteredList.map((item) => (
-              [ <h1 key={'categoryHeader' + item.id}>{item.title + '(' + item.subList.length + ')'}</h1>,
+              [ <h1 key={'categoryHeader' + item.id}>{item.title + ' (' + item.subList.length + ')'}</h1>,
                 <ul key={'category' + item.id}>
                   {item.subList.map((subItem) => (
                     <li key={'category' + item.id + '-' + subItem.id}>{subItem.title}</li>
