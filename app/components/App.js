@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { footer } from '../styles/footer.scss';
 import Routes from '../routes';
 import { app } from '../styles/app.scss';
+import '../helpers/fullList.json';
 
 const App = () =>
     <div className={app}>

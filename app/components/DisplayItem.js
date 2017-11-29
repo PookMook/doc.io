@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { configureStore } from '../store/configureStore';
-import * as action from '../actions/types';
+import { Link } from 'react-router-dom';
 
 const store = configureStore();
 const Fragment = React.Fragment;
@@ -15,7 +15,6 @@ export default class DisplayItem extends Component {
             item: this.props.match.params.item,
             category: this.props.match.params.category
         };
-        store.dispatch({ type: action.BUILD});
     }
 
     render() {
@@ -25,8 +24,8 @@ export default class DisplayItem extends Component {
           {documentation.itemById && documentation.itemById[this.state.item] &&
               <Fragment>
                   <nav>
-                      documentation
-                       > {documentation.categoryById[this.state.category].title} > {documentation.itemById[this.state.item].title}
+                      <Link to="/">documentation</Link>
+                       > <Link to={'/category/' + this.state.category}>{documentation.categoryById[this.state.category].title}</Link> > <Link to={'/category/' + this.state.category + '/item/' + this.state.item} >{documentation.itemById[this.state.item].title}</Link>
                   </nav>
                   <p>{documentation.itemById[this.state.item].desc}</p>
               </Fragment>

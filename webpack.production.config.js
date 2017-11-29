@@ -78,7 +78,7 @@ module.exports = {
             loader: 'babel'
         }, {
             test: /\.json?$/,
-            loader: 'json'
+            loader: 'file-loader?name=[name].[ext]'
         }, {
             test: /\.scss$/,
             // we extract the styles into their own .css file instead of having

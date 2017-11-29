@@ -10,8 +10,20 @@ export default class Documentation extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { filter: store.getState().documentation.filter};
+        this.state = { filter: store.getState().documentation.filter,  loaded: false};
         this.handleFilter = this.handleFilter.bind(this);
+        this.fetchAPI = this.fetchAPI.bind(this);
+        this.fetchAPI();
+    }
+
+    fetchAPI() {
+        const that = this;
+        fetch('/fullList.json')
+        .then((data) => data.json())
+        .then(function updateRedux(json) {
+            store.dispatch({ type: action.BUILD, value: json});
+            that.setState({loaded: true});
+        });
     }
 
     handleFilter(e) {
@@ -23,7 +35,8 @@ export default class Documentation extends Component {
         return (
           <div className={doc}>
             <input value={this.state.filter} onChange={this.handleFilter} placeholder="Search" />
-            {store.getState().documentation.filteredList.map((item) => (<Category {...item} key={'Category' + item.id} />))}
+            {!this.state.loaded && <p>Loading...</p>}
+            {this.state.loaded && store.getState().documentation.filteredList.map((item) => (<Category {...item} key={'Category' + item.id} />))}
           </div>
         );
     }
