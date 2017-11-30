@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import { configureStore } from '../store/configureStore';
 import * as action from '../actions/types';
 import { doc } from '../styles/doc.scss';
 import Category from './Documentation/Category';
-
-const store = configureStore();
+import store from '../store/store';
 
 export default class Documentation extends Component {
 

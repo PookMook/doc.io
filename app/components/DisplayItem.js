@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { configureStore } from '../store/configureStore';
 import { Link } from 'react-router-dom';
+import store from '../store/store';
 
-const store = configureStore();
 const Fragment = React.Fragment;
 
 export default class DisplayItem extends Component {
