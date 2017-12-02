@@ -8,10 +8,12 @@ export default class Documentation extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { filter: store.getState().documentation.filter,  loaded: false};
+        this.state = { filter: store.getState().documentation.filter,  loaded: ( store.getState().documentation.compiledAt ? true : false )};
         this.handleFilter = this.handleFilter.bind(this);
         this.fetchAPI = this.fetchAPI.bind(this);
-        this.fetchAPI();
+        if(!this.state.loaded) {
+            this.fetchAPI();
+        }
     }
 
     fetchAPI() {
