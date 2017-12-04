@@ -6,7 +6,7 @@ services:
     container_name: docIO
     volumes:
       - "./dist:/usr/share/nginx/html:ro"
-      - "./sample-website.conf:/etc/nginx/conf.d"
+      - "./sample-website.conf:/etc/nginx/conf.d/sample-website.conf"
     environment:
       - VIRTUAL_HOST=doc.14159.ninja
       - VIRTUAL_NETWORK=nginx-proxy
