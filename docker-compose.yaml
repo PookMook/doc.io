@@ -1,6 +1,6 @@
 version: "2"
 services:
-  docIO:
+  docio:
     restart: always
     container_name: doc-romain
     build: .
