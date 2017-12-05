@@ -2,7 +2,8 @@ version: "2"
 services:
   docIO:
     restart: always
-    container_name: docIO
+    container_name: doc-romain
+    image: docIO
     build: .
     environment:
       - VIRTUAL_HOST=doc.14159.ninja
