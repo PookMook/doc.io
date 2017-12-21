@@ -5,11 +5,13 @@ import DisplayGeneral from './components/DisplayGeneral';
 import DisplayItem from './components/DisplayItem';
 import DisplayCategory from './components/DisplayCategory';
 
-export default (
-	<Switch>
-		<Route exact path="/" component={DisplayGeneral} />
-		<Route exact path="/category/:category" component={DisplayCategory} />
-		<Route exact path="/category/:category/item/:item" component={DisplayItem} />
-		<Route path="/about" component={About} />
-	</Switch>
-);
+export default function Routes(props) {
+    return	(
+			<Switch>
+				<Route exact path="/" render={(routeProps) => <DisplayGeneral {...routeProps} {...props}/>}/>
+				<Route exact path="/category/:category" render={(routeProps) => <DisplayCategory {...routeProps} {...props}/>}/>
+				<Route exact path="/category/:category/item/:item" render={(routeProps) => <DisplayItem {...routeProps} {...props}/>}/>
+				<Route path="/about" render={(routeProps) => <About {...routeProps} {...props}/>}/>
+			</Switch>
+	  );
+}

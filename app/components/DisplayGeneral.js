@@ -1,18 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 const Fragment = React.Fragment;
-import store from '../store/store';
 import Marked from 'marked';
 
-export default function DisplayGeneral() {
-    const documentation = store.getState().documentation;
+export default function DisplayGeneral(props) {
+    const documentation = props.state;
     return (
         <Fragment>
-          <h1>{documentation.title}</h1>
-          {documentation.desc && <section dangerouslySetInnerHTML={{__html: Marked(documentation.desc)}} />}
+          <h1>{documentation && documentation.title}</h1>
+          {documentation && documentation.desc && <section dangerouslySetInnerHTML={{__html: Marked(documentation.desc)}} />}
           <ul>
-            {documentation.fullList && documentation.fullList.map((o, i)=>(<li key={'category' + i}>{o.title}</li>))}
-            {!documentation.fullList && <p>No categories found!</p>}
+            {documentation && documentation.fullList && documentation.fullList.map((o, i)=>(<li key={'category' + i}>{o.title}</li>))}
+            {documentation && !documentation.fullList && <p>No categories found!</p>}
           </ul>
         </Fragment>
     );
 }
+
+DisplayGeneral.propTypes = {
+    props: PropTypes.object,
+    state: PropTypes.object
+};
