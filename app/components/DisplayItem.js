@@ -5,8 +5,6 @@ import store from '../store/store';
 import Marked from 'marked';
 import { displayItem } from '../styles/displayItem.scss';
 const Fragment = React.Fragment;
-import { doc } from '../styles/doc.scss';
-import Category from './Documentation/Category';
 
 export default class DisplayItem extends Component {
 
@@ -39,10 +37,6 @@ export default class DisplayItem extends Component {
                       <h1 className="headline">{documentation.itemById[this.state.item].title}</h1>
                       <section dangerouslySetInnerHTML={{__html: Marked(documentation.itemById[this.state.item].desc)}} />
                   </Fragment>
-              }
-              </div>
-              <div className={doc}>
-              {documentation.categoryById && documentation.categoryById[this.state.category] && <Category {...documentation.categoryById[this.state.category]} />
               }
               </div>
           </Fragment>

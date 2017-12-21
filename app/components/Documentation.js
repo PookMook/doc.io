@@ -4,6 +4,7 @@ import { doc } from '../styles/doc.scss';
 import Category from './Documentation/Category';
 import store from '../store/store';
 import doubleDigit from '../helpers/doubleDigit';
+import { Link } from 'react-router-dom';
 
 export default class Documentation extends Component {
 
@@ -40,7 +41,8 @@ export default class Documentation extends Component {
             {!this.state.loaded && <p>Loading...</p>}
             {this.state.loaded &&
             <p onClick={this.fetchAPI}>Last update {doubleDigit(documentation.compiledAt.getDate())}/{doubleDigit(documentation.compiledAt.getMonth())} {doubleDigit(documentation.compiledAt.getHours())}:{doubleDigit(documentation.compiledAt.getMinutes())}</p>}
-            {this.state.loaded && documentation.filteredList.map((item) => (<Category {...item} key={'Category' + item.id} />))}
+            <Link  to="/">{documentation.title}</Link>
+            {this.state.loaded && documentation.filteredList.map((item) => (<Category {...item} key={'Category' + item.id} css={doc}/>))}
           </div>
         );
     }

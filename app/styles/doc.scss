@@ -1,16 +1,8 @@
 .doc {
-	margin:0 auto;
-	width:600px;
 	input{
 		width:100%;
 		padding:0.5rem 1rem;
 		box-sizing: border-box;
-	}
-	h1 {
-		background-color: #c0c0c0;
-		padding:0.5rem 1rem;
-		margin: 0;
-		font-size: 1rem;
 	}
 	> p{
 		padding:0.5rem 1rem;
@@ -18,19 +10,21 @@
 		color:white;
 		cursor:pointer;
 	}
-	ul{
+	a{
+		display: block;
+		cursor: pointer;
+		user-select:none;
+		list-style: none;
+		padding:0.5rem 1rem;
 		margin: 0;
-		padding: 0;
-		a{
-			display: block;
-			cursor: pointer;
-			user-select:none;
-			list-style: none;
-			padding:0.5rem 1rem;
-			margin: 0;
-			border-bottom: 1px solid #c0c0c0;
-			border-left: 1px solid #c0c0c0;
-			border-right: 1px solid #c0c0c0;
-		}
+		border-bottom: 1px solid #c0c0c0;
+		border-left: 1px solid #c0c0c0;
+		border-right: 1px solid #c0c0c0;
 	}
+}
+.CategoryHeader{
+	background-color: #c0c0c0;
+	padding:0.5rem 1rem;
+	margin: 0;
+	font-size: 1rem;
 }

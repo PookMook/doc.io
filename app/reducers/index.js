@@ -28,6 +28,8 @@ const documentation = (state = { fullList: [], filteredList: [], filter: ''}, ac
         case types.BUILD:
             const builtState = Object.assign({}, state);
             builtState.compiledAt = new Date(action.value.compiledAt);
+            builtState.title = action.value.title;
+            builtState.desc = action.value.desc;
             builtState.fullList = action.value.categories;
             builtState.categoryById = [];
             builtState.itemById = [];

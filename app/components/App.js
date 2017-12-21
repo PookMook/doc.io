@@ -1,18 +1,36 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import { footer } from '../styles/footer.scss';
 import Routes from '../routes';
+import Documentation from './Documentation';
 import { app } from '../styles/app.scss';
 import '../helpers/fullList.json';
+import _ from 'lodash';
 
-const App = () =>
-    <div className={app}>
-        <h1>Documentation</h1>
-        { Routes }
-        <footer className={footer}>
-            <Link to="/">Documentation</Link>
-            <Link to="/about">About</Link>
-        </footer>
-    </div>;
 
-export default App;
+export default class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {title: '', desc: ''};
+        this.updateState = this.updateState.bind(this);
+    }
+
+    updateState(target, value) {
+        this.setState((state)=>_.set(state, target, value));
+    }
+
+    render() {
+        return(
+            <div className={app}>
+                <Documentation state={this.state}/>
+                <div>
+                  { Routes }
+                  <footer className={footer}>
+                    <Link to="/">Documentation</Link>
+                    <Link to="/about">About</Link>
+                  </footer>
+                </div>
+            </div>
+        );
+    }
+}
