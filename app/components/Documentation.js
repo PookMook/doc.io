@@ -5,6 +5,7 @@ import Category from './Documentation/Category';
 import store from '../store/store';
 import doubleDigit from '../helpers/doubleDigit';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export default class Documentation extends Component {
 
@@ -25,11 +26,13 @@ export default class Documentation extends Component {
         .then(function updateRedux(json) {
             store.dispatch({ type: action.BUILD, value: json});
             that.setState({loaded: true});
+            that.props.buildState(json);
         });
     }
 
     handleFilter(e) {
         this.setState({ filter: e.target.value});
+        this.props.searchItem(e.target.value);
         store.dispatch({ type: action.FILTER, payload: e.target.value});
     }
 
@@ -43,7 +46,14 @@ export default class Documentation extends Component {
             <p onClick={this.fetchAPI}>Last update {doubleDigit(documentation.compiledAt.getDate())}/{doubleDigit(documentation.compiledAt.getMonth())} {doubleDigit(documentation.compiledAt.getHours())}:{doubleDigit(documentation.compiledAt.getMinutes())}</p>}
             <Link  to="/">{documentation.title}</Link>
             {this.state.loaded && documentation.filteredList.map((item) => (<Category {...item} key={'Category' + item.id} css={doc}/>))}
+            <p>{this.props.state.filteredList && JSON.stringify(this.props.state.filteredList)}</p>
           </div>
         );
     }
 }
+
+Documentation.propTypes = {
+    props: PropTypes.object,
+    state: PropTypes.object,
+    searchItem: PropTypes.function
+};

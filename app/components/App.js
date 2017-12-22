@@ -9,8 +9,11 @@ import _ from 'lodash';
 export default class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {fullList: [], filteredList: [], filter: '', title: 'Mon titre par défaut', desc: ''};
+        this.state = {loaded: false, fullList: [], filteredList: [], filter: '', title: 'Mon titre par défaut', desc: ''};
         this.updateState = this.updateState.bind(this);
+        this.buildState = this.buildState.bind(this);
+        this.searchItem = this.searchItem.bind(this);
+        // this.fetchAPI();
     }
 
     updateState(target, value) {
@@ -37,6 +40,12 @@ export default class App extends Component {
         });
     }
 
+    searchItem(filterString) {
+        this.setState(function search(state) {
+            return this.filterItems(state, filterString);
+        });
+    }
+
     filterItems(state, filterString) {
         const newState = Object.assign({}, state);
         // Update filter string
@@ -59,7 +68,7 @@ export default class App extends Component {
     render() {
         return(
             <div className={app}>
-                <Documentation state={this.state}/>
+                <Documentation state={this.state} buildState={this.buildState} searchItem={this.searchItem}/>
                 <div>
                   <Routes state={this.state}/>
                 </div>
