@@ -13,7 +13,19 @@ export default class App extends Component {
         this.updateState = this.updateState.bind(this);
         this.buildState = this.buildState.bind(this);
         this.searchItem = this.searchItem.bind(this);
-        // this.fetchAPI();
+        this.fetchAPI = this.fetchAPI.bind(this);
+        if(!this.state.loaded) {
+            this.fetchAPI();
+        }
+    }
+
+    fetchAPI() {
+        const that = this;
+        fetch('/fullList.json')
+        .then((data) => data.json())
+        .then(function updateRedux(json) {
+            that.buildState(json);
+        });
     }
 
     updateState(target, value) {
@@ -23,6 +35,7 @@ export default class App extends Component {
     buildState(value) {
         this.setState(function buildState(state) {
             const builtState = Object.assign({}, state);
+            builtState.loaded = true;
             builtState.compiledAt = new Date(value.compiledAt);
             builtState.title = value.title;
             builtState.desc = value.desc;
