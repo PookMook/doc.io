@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Marked from 'marked';
-import { doc } from '../styles/doc.scss';
+import { displayItem } from '../styles/displayItem.scss';
 const Fragment = React.Fragment;
 
 export default class DisplayItem extends Component {
@@ -25,7 +25,7 @@ export default class DisplayItem extends Component {
         const documentation = this.props.state;
         return (
           <Fragment>
-              <div className={doc}>
+              <div className={displayItem}>
               {documentation.categoryById && documentation.categoryById[this.state.category] &&
                   <Fragment>
                       <nav>
