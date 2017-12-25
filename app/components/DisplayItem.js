@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import store from '../store/store';
 import Marked from 'marked';
 import { displayItem } from '../styles/displayItem.scss';
 const Fragment = React.Fragment;
@@ -24,7 +23,7 @@ export default class DisplayItem extends Component {
     }
 
     render() {
-        const documentation = store.getState().documentation;
+        const documentation = this.props.state;
         return (
           <Fragment>
               <div className={displayItem}>
@@ -50,4 +49,5 @@ DisplayItem.propTypes = {
     params: PropTypes.object,
     item: PropTypes.number,
     category: PropTypes.number,
+    state: PropTypes.object
 };
