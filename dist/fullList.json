@@ -1,1 +1,58 @@
-{"compiledAt":"Sat Dec 02 2017 15:36:52 GMT-0500 (EST)","title":"Mes recettes","desc":"# Bienvenue\nVous trouverez ci-dessous mes recettes préférées, accumulées à travers le temps\n\n## Contact\nSi vous souhaitez mes suggérer une nouvelle recette ou une variante d'un recette existante, laissez moi un courriel!","categories":[{"title":"Gateau","subList":[{"title":"Gateau au Fromage","id":0,"desc":"# Ingredients\n - Oeufs\n\n# Recette\nIci une recette de gateau au Fromage"},{"title":"Gateau au chocolat","id":1,"desc":"Ici une recette de gateau au chocolat"}],"id":0},{"title":"Brioche","subList":[{"title":"brioche tressée","id":2,"desc":"Ici une recette de brioche tressée"},{"title":"brioche au beurre","id":3,"desc":"Ici une recette de brioche au beurre"}],"id":1}]}
+{
+  "compiledAt": "Sat Dec 02 2017 15:36:52 GMT-0500 (EST)",
+  "title": "Mes recettes",
+  "desc": "# Bienvenue\nVous trouverez ci-dessous mes recettes préférées, accumulées à travers le temps\n\n## Contact\nSi vous souhaitez mes suggérer une nouvelle recette ou une variante d'un recette existante, laissez moi un courriel!",
+  "categories": [
+    {
+      "title": "Bouchées",
+      "desc": "rien ne commence mieux un repas que des bouchées",
+      "subList": [
+        {
+          "title": "Huîtres rémoulade",
+          "id": 0,
+          "desc": "**Préparation** 30 MIN\n\n **Trempage** 15 MIN\n\n **Rendement** 2 douzaines\n\n# Ingrédients\n - 125 g (3/4 tasse) de petits dés de céleri-rave ou de panais \n - 15 ml (1 c. à soupe) de petits dés de cornichons \n - 15 ml (1 c. à soupe) de mayonnaise \n - 10 ml (2 c. à thé) de vinaigre de vin blanc \n - 5 ml (1 c. à thé) de moutarde de Dijon \n - 5 ml (1 c. à thé) de câpres hachées \n - 2,5 ml (1/2 c. à thé) de raifort préparé \n - 1 petit oignon vert, haché \n - 24 huîtres, brossées et lavées \n\n# Préparation\n - Dans un bol, mélanger tous les ingrédients sauf les huîtres. Poivrer. Laisser macérer au moins 15 minutes. \n - Ouvrir les huîtres et détacher les mollusques de leur coquille. Placer les huîtres sur un plat de service couvert de glace concassée. \n - Garnir les huîtres de la rémoulade, au goût."
+        },
+        {
+          "title": "Chips de wontons au canard confit",
+          "id": 1,
+          "desc": "**Préparation** 30 MIN\n\n**Cuisson** 8 MIN\n\n**Trempage** 15 MIN\n\n**Rendement** 2 douzaines\n\n# Ingrédients\n\n - 1 petite carotte, coupée en fine julienne    \n - 15 ml (1 c. à soupe) de vinaigre de riz    \n - 1 ml (1/4 c. à thé) de sucre    \n - 1 ml (1/4 c. à thé) de sel    \n - 1 cuisse de canard confit, la chair effilochée    \n - 15 ml (1 c. à soupe) de sauce hoisin    \n - 5 ml (1 c. à thé) de sambal oelek    \n - 1 oignon vert, coupé en fine julienne    \n - 6 carrés de pâte à wontons    \n - Graines de sésame noir, au goût (facultatif)    \n - Huile végétale, pour la cuisson"
+        }
+      ],
+      "id": 0
+    },
+    {
+      "title": "Gateau",
+      "desc": "# la liste de mes gâteaux",
+      "subList": [
+        {
+          "title": "Gateau au Fromage",
+          "id": 2,
+          "desc": "# Ingredients\n - Oeufs\n\n# Recette\nIci une recette de gateau au Fromage"
+        },
+        {
+          "title": "Gateau au chocolat",
+          "id": 3,
+          "desc": "Ici une recette de gateau au chocolat"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "title": "Brioche",
+      "desc": "# la liste de mes brioches",
+      "subList": [
+        {
+          "title": "brioche tressée",
+          "id": 4,
+          "desc": "Ici une recette de brioche tressée"
+        },
+        {
+          "title": "brioche au beurre",
+          "id": 5,
+          "desc": "Ici une recette de brioche au beurre"
+        }
+      ],
+      "id": 2
+    }
+  ]
+}
