@@ -1,11 +1,16 @@
 .doc {
 	input{
 		width:100%;
-		padding:0.5rem 1rem;
+		padding:1rem 1rem;
 		box-sizing: border-box;
+		border-radius: 0;
+		border-bottom:1px solid #c0c0c0;
+		border-right:1px solid #c0c0c0;
+		border-left:none;
+		border-top:none;
 	}
 	> p{
-		padding:0.5rem 1rem;
+		padding:1rem 1rem;
 		background-color: green;
 		color:white;
 		cursor:pointer;
@@ -15,10 +20,9 @@
 		cursor: pointer;
 		user-select:none;
 		list-style: none;
-		padding:0.5rem 1rem;
+		padding:1rem 1rem;
 		margin: 0;
 		border-bottom: 1px solid #c0c0c0;
-		border-left: 1px solid #c0c0c0;
 		border-right: 1px solid #c0c0c0;
 	}
 }
@@ -27,4 +31,9 @@
 	padding:0.5rem 1rem;
 	margin: 0;
 	font-size: 1rem;
+}
+a.DocHeader{
+	background-color: #505050;
+	border-right: 1px solid #505050;
+	color:white;
 }

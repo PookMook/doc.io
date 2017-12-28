@@ -10,11 +10,26 @@
 			font-size: 1.2rem;
 			margin:0.5rem 0;
 		}
+		> h2{
+			font-weight: bold;
+			font-size: 1rem;
+			margin:0.5rem 0;
+		}
+		strong{
+			font-weight: bold;
+		}
 		> ul{
 			padding-left:2rem;
 			> li {
 				list-style: disc;
 			}
+		}
+	}
+	> ol{
+		padding-left:2rem;
+		margin:0.5rem 0;
+		> li {
+			list-style: roman;
 		}
 	}
 	margin-bottom:1rem;
