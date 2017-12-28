@@ -34,6 +34,12 @@ export default class DisplayItem extends Component {
                       </nav>
                       <h1 className="headline">{documentation.categoryById[this.state.category].title}</h1>
                       <section dangerouslySetInnerHTML={{__html: Marked(documentation.categoryById[this.state.category].desc)}} />
+
+                      <ol>
+                        {documentation.categoryById[this.state.category].subList.map((o)=>(
+                          <li key={'SubCategory' + o.id}><Link to={'/category/' + documentation.categoryById[this.state.category].id + '/item/' + o.id}>{o.title}</Link></li>
+                        ))}
+                      </ol>
                   </Fragment>
               }
               </div>
