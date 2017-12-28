@@ -3,6 +3,8 @@ import Routes from '../routes';
 import Documentation from './Documentation';
 import { app } from '../styles/app.scss';
 import '../helpers/fullList.json';
+import stripSearch from '../helpers/stripSearch';
+String.prototype.stripSearch = stripSearch;
 import _ from 'lodash';
 
 
@@ -71,7 +73,7 @@ export default class App extends Component {
         newState.filteredList = newState.filteredList.map(function filter(cat) {
             const Immutablecat = Object.assign({}, cat);
             const thisSublist = [...Immutablecat.subList];
-            Immutablecat.subList = thisSublist.filter(sublist => sublist.title.toLowerCase().includes(filterString.toLowerCase()));
+            Immutablecat.subList = thisSublist.filter(sublist => sublist.title.stripSearch().includes(filterString.stripSearch()));
             return Immutablecat;
         });
         return newState;
