@@ -48,6 +48,9 @@ table {
 }
 
 /* CUSTOM GLOBAL STYLES */
+html{
+	overflow-y:scroll;
+}
 html,body,body > div,body > div > div {
   color:#303030;
 	width:100%;
