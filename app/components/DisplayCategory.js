@@ -29,8 +29,7 @@ export default class DisplayItem extends Component {
               {documentation.categoryById && documentation.categoryById[this.state.category] &&
                   <Fragment>
                       <nav>
-                          <Link to="/">{documentation.title}</Link>
-                           > <Link to={'/category/' + this.state.category}>{documentation.categoryById[this.state.category].title}</Link>
+                          <Link to="/">{documentation.title}</Link> > <Link to={'/category/' + this.state.category}>{documentation.categoryById[this.state.category].title}</Link>
                       </nav>
                       <h1 className="headline">{documentation.categoryById[this.state.category].title}</h1>
                       <section dangerouslySetInnerHTML={{__html: Marked(documentation.categoryById[this.state.category].desc)}} />
