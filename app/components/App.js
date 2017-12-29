@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Routes from '../routes';
+import Header from './Header';
 import Documentation from './Documentation';
-import { app } from '../styles/app.scss';
+import { app, closedDoc } from '../styles/app.scss';
 import '../helpers/fullList.json';
 import stripSearch from '../helpers/stripSearch';
 String.prototype.stripSearch = stripSearch;
@@ -11,11 +12,12 @@ import _ from 'lodash';
 export default class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {loaded: false, fullList: [], filteredList: [], filter: '', title: 'Mon titre par défaut', desc: ''};
+        this.state = {loaded: false, fullList: [], filteredList: [], filter: '', title: 'Mon titre par défaut', desc: '', closedDoc: false};
         this.updateState = this.updateState.bind(this);
         this.buildState = this.buildState.bind(this);
         this.searchItem = this.searchItem.bind(this);
         this.fetchAPI = this.fetchAPI.bind(this);
+        this.toggleDoc = this.toggleDoc.bind(this);
         if(!this.state.loaded) {
             this.fetchAPI();
         }
@@ -79,12 +81,17 @@ export default class App extends Component {
         return newState;
     }
 
+    toggleDoc() {
+        this.setState({closedDoc: !this.state.closedDoc});
+    }
+
 
     render() {
         return(
-            <div className={app}>
-                <Documentation state={this.state} buildState={this.buildState} searchItem={this.searchItem}/>
+            <div className={this.state.closedDoc ? app + ' ' + closedDoc : app}>
+                <Documentation state={this.state} buildState={this.buildState} searchItem={this.searchItem} toggleDoc={this.toggleDoc}/>
                 <div>
+                  <Header state={this.state} toggleDoc={this.toggleDoc}/>
                   <Routes state={this.state}/>
                 </div>
             </div>

@@ -14,6 +14,7 @@
 			height:100%;
 			width:300px;
 			overflow: auto;
+			transition: width 300ms ease;
 	}
 	> div:last-child {
 		position:absolute;
@@ -21,6 +22,25 @@
 		top:0;
 		bottom:0;
 		right:0;
-		padding:2rem;
+		transition: left 300ms ease;
+		> nav {
+			padding:1rem;
+			border-bottom:1px solid #c0c0c0;
+			cursor:pointer;
+			background-color: #c0c0c0;
+			color:white;
+			-webkit-user-select: none;  /* Chrome all / Safari all */
+			-moz-user-select: none;     /* Firefox all */
+			-ms-user-select: none;      /* IE 10+ */
+			user-select: none;          /* Likely future */
+		}
+	}
+}
+.closedDoc {
+	> div:first-child{
+			width:0px;
+	}
+	> div:last-child {
+		left:0px;
 	}
 }

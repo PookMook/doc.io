@@ -1,4 +1,8 @@
 .doc {
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+	user-select: none;          /* Likely future */
 	input{
 		width:100%;
 		padding:1rem 1rem;
@@ -14,6 +18,14 @@
 		background-color: green;
 		color:white;
 		cursor:pointer;
+	}
+	> nav{
+		background-color: #c0c0c0;
+		color:white;
+		padding:1rem;
+		border-bottom: 1px solid #c0c0c0;
+		cursor:pointer;
+		user-select:none;
 	}
 	a{
 		display: block;
