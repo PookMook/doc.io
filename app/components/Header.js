@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faBars from '@fortawesome/fontawesome-free-solid/faBars';
 
 
 const Header = (props) =>
-    <nav onClick={()=>props.toggleDoc()}>
-      <FontAwesomeIcon icon="bars"/>
+    <nav>
+      <FontAwesomeIcon icon={faBars}  onClick={()=>props.toggleDoc()}/>
     </nav>;
 
 Header.propTypes = {
