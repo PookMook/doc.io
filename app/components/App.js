@@ -91,8 +91,10 @@ export default class App extends Component {
             <div className={this.state.closedDoc ? app + ' ' + closedDoc : app}>
                 <Documentation state={this.state} buildState={this.buildState} searchItem={this.searchItem} toggleDoc={this.toggleDoc}/>
                 <div>
-                  <Header state={this.state} toggleDoc={this.toggleDoc}/>
-                  <Routes state={this.state}/>
+                  <div>
+                    <Header state={this.state} toggleDoc={this.toggleDoc}/>
+                    <Routes state={this.state}/>
+                  </div>
                 </div>
             </div>
         );
