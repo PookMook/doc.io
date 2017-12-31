@@ -72,12 +72,16 @@ export default class App extends Component {
         newState.filteredList = [...state.fullList];
 
         // for each item, search for matching item in sublist
-        newState.filteredList = newState.filteredList.map(function filter(cat) {
-            const Immutablecat = Object.assign({}, cat);
-            const thisSublist = [...Immutablecat.subList];
-            Immutablecat.subList = thisSublist.filter(sublist => sublist.title.stripSearch().includes(filterString.stripSearch()));
-            return Immutablecat;
-        });
+        const arrayFilter = filterString.split(' ');
+
+        for(let i = 0; i < arrayFilter.length;  i++) {
+            newState.filteredList = newState.filteredList.map(function filter(cat) {
+                const Immutablecat = Object.assign({}, cat);
+                const thisSublist = [...Immutablecat.subList];
+                Immutablecat.subList = thisSublist.filter(sublist => sublist.title.stripSearch().includes(arrayFilter[i].stripSearch()));
+                return Immutablecat;
+            });
+        }
         return newState;
     }
 
